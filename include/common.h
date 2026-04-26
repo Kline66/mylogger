@@ -4,12 +4,12 @@
 #include <pthread.h>
 #include <stdbool.h>
 
-//模拟传感器数据结构
-typedef struct 
-{
-    int sensor_id;
-    float value;
-    char timestamp[32];
+//接收stm32发送的数据
+typedef struct {
+    int temperature;    // 温度
+    int humidity;       // 湿度
+    int speed;          // 电机转速
+    char timestamp[32]; // 采集时间
 } DataPayload;
 
 //共享缓冲区结构（单元素缓冲）
